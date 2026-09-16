@@ -1,0 +1,10 @@
+{
+    "autodeskProduct": "Fusion360",
+    "type": "addin",
+    "author": "Ryan Friedman",
+    "description": "Local HTTP bridge that lets an Elgato Stream Deck run Fusion 360 commands and fetch their real toolbar icons.",
+    "version": "1.0.0",
+    "runOnStartup": false,
+    "supportedOS": "windows|mac",
+    "editEnabled": true
+}

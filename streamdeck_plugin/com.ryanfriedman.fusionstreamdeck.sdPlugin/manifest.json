@@ -1,0 +1,55 @@
+{
+    "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+    "Name": "Fusion 360",
+    "UUID": "com.ryanfriedman.fusionstreamdeck",
+    "Version": "1.0.0.0",
+    "Author": "Ryan Friedman",
+    "Description": "Run Fusion 360 commands and send keystrokes from an Elgato Stream Deck, with each key showing the command's real Fusion toolbar icon.",
+    "Category": "Fusion 360",
+    "CategoryIcon": "imgs/plugin/category-icon",
+    "Icon": "imgs/plugin/marketplace",
+    "CodePath": "bin/plugin.js",
+    "Nodejs": {
+        "Version": "24"
+    },
+    "SDKVersion": 2,
+    "Software": {
+        "MinimumVersion": "6.4"
+    },
+    "OS": [
+        { "Platform": "windows", "MinimumVersion": "10" },
+        { "Platform": "mac", "MinimumVersion": "13" }
+    ],
+    "Actions": [
+        {
+            "Name": "Run Command",
+            "UUID": "com.ryanfriedman.fusionstreamdeck.runcommand",
+            "Tooltip": "Run any Fusion 360 command. Shows the command's real toolbar icon on the key.",
+            "Icon": "imgs/actions/run-command/icon",
+            "PropertyInspectorPath": "ui/run-command.html",
+            "SupportedInMultiActions": true,
+            "States": [
+                {
+                    "Image": "imgs/actions/run-command/key",
+                    "TitleAlignment": "bottom",
+                    "ShowTitle": true
+                }
+            ]
+        },
+        {
+            "Name": "Send Keystroke",
+            "UUID": "com.ryanfriedman.fusionstreamdeck.keystroke",
+            "Tooltip": "Send a keyboard shortcut to the active application (works even if the Fusion add-in isn't running).",
+            "Icon": "imgs/actions/keystroke/icon",
+            "PropertyInspectorPath": "ui/send-keystroke.html",
+            "SupportedInMultiActions": true,
+            "States": [
+                {
+                    "Image": "imgs/actions/keystroke/key",
+                    "TitleAlignment": "bottom",
+                    "ShowTitle": true
+                }
+            ]
+        }
+    ]
+}

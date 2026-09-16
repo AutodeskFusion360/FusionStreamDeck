@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="pi-common.css">
+</head>
+<body>
+    <div class="section">
+        <label for="search">Fusion command</label>
+        <input type="text" id="search" placeholder="Type to search, e.g. save, extrude, undo…" autocomplete="off">
+        <div class="hint">Searches the commands currently loaded in Fusion. Open the workspace the command lives in first (e.g. switch to Sheet Metal) if it isn't showing up. Fusion must be running with the add-in loaded.</div>
+        <div class="results" id="results"></div>
+        <div class="error" id="error" style="display:none"></div>
+    </div>
+
+    <div class="section" id="selectedSection" style="display:none">
+        <label>Selected</label>
+        <div class="preview">
+            <img id="icon" alt="">
+            <div>
+                <div class="result-name" id="selectedName"></div>
+                <div class="result-id" id="selectedId"></div>
+            </div>
+        </div>
+    </div>
+
+<script src="run-command.js"></script>
+</body>
+</html>
