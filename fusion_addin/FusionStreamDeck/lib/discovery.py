@@ -1,3 +1,5 @@
+# Copyright (c) 2026 Autodesk, Inc.
+# Licensed under the MIT License. See LICENSE in the project root.
 """Publishes where the local HTTP server is listening so the Stream Deck
 plugin (a separate process, possibly started before or after Fusion) can find
 it without a fixed, potentially-already-in-use port.

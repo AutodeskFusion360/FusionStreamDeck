@@ -1,3 +1,5 @@
+// Copyright (c) 2026 Autodesk, Inc.
+// Licensed under the MIT License. See LICENSE in the project root.
 // Property inspector for the "Run Command" action. Stream Deck loads this
 // page and calls window.connectElgatoStreamDeckSocket() once it's ready.
 let websocket = null;

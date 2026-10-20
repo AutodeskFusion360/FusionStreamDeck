@@ -1,10 +1,13 @@
+// Copyright (c) 2026 Autodesk, Inc.
+// Licensed under the MIT License. See LICENSE in the project root.
 import { StreamDeckConnection } from '../lib/streamdeck.js';
-import { runCommand, fetchIconDataUri, searchCommands } from '../lib/fusionClient.js';
+import { runCommand, fetchIconDataUri, getDisabledIconDataUri, searchCommands } from '../lib/fusionClient.js';
 import { sendKeystroke } from '../lib/keystroke.js';
 
 const RUN_COMMAND_UUID = 'com.ryanfriedman.fusionstreamdeck.runcommand';
 const KEYSTROKE_UUID = 'com.ryanfriedman.fusionstreamdeck.keystroke';
 const ICON_SIZE = 32;
+const DISABLED_RETRY_MS = 5000;
 
 function parseArgs(argv) {
     const args = {};
@@ -28,10 +31,22 @@ async function refreshIcon(context) {
     try {
         const dataUri = await fetchIconDataUri(commandId, ICON_SIZE);
         sd.setImage(context, dataUri);
+        entry.disabled = false;
     } catch (err) {
         sd.logMessage(`icon fetch failed for ${commandId}: ${err.message}`);
+        sd.setImage(context, getDisabledIconDataUri(commandId));
+        entry.disabled = true;
     }
 }
+
+// Fusion coming back online won't otherwise be noticed until the key's
+// willAppear/didReceiveSettings fires again (e.g. switching profiles), so
+// periodically retry keys currently showing the disabled look.
+setInterval(() => {
+    for (const [context, entry] of contexts) {
+        if (entry.disabled) refreshIcon(context);
+    }
+}, DISABLED_RETRY_MS);
 
 sd.on('willAppear', (msg) => {
     contexts.set(msg.context, { action: msg.action, settings: msg.payload?.settings || {} });
