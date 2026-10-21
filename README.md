@@ -8,7 +8,7 @@ There are two pieces, and you need to install both:
 | Piece | Folder | Installs into |
 | --- | --- | --- |
 | Fusion add-in | `FusionStreamDeck` | Fusion 360 |
-| Stream Deck plugin | `com.ryanfriedman.fusionstreamdeck.sdPlugin` | Elgato Stream Deck app |
+| Stream Deck plugin | `com.autodesk.fusionstreamdeck.sdPlugin` | Elgato Stream Deck app |
 
 ## Requirements
 
@@ -58,7 +58,7 @@ Deck's developer mode.
 2. Fully quit the Stream Deck app: right-click its icon in the Windows system
    tray (or the macOS menu bar) and choose **Quit Stream Deck**. Closing
    the window isn't enough.
-3. Copy the whole `com.ryanfriedman.fusionstreamdeck.sdPlugin` folder (keep
+3. Copy the whole `com.autodesk.fusionstreamdeck.sdPlugin` folder (keep
    that exact folder name, including `.sdPlugin`) into Stream Deck's plugins
    folder:
    - **Windows:** `%APPDATA%\Elgato\StreamDeck\Plugins\`
@@ -145,7 +145,7 @@ changes are needed.
    **Stop**, untick **Run on Startup**, then delete the `FusionStreamDeck`
    folder from Fusion's `AddIns` folder.
 2. In Stream Deck, remove any Fusion 360 keys. Quit the Stream Deck app and
-   delete the `com.ryanfriedman.fusionstreamdeck.sdPlugin` folder from its
+   delete the `com.autodesk.fusionstreamdeck.sdPlugin` folder from its
    `Plugins` folder.
 3. Optionally delete the `FusionStreamDeck` folder under
    `%LOCALAPPDATA%` (Windows) or `~/Library/Application Support` (macOS).
@@ -182,7 +182,7 @@ Stream Deck app  <--WebSocket-->  streamdeck_plugin (Node)  <--HTTP-->  fusion_a
   onto Fusion's main thread via a custom event (`lib/dispatch.py`) - the API
   isn't thread-safe and the HTTP server runs on a background thread.
 
-- **`streamdeck_plugin/com.ryanfriedman.fusionstreamdeck.sdPlugin`** - a
+- **`streamdeck_plugin/com.autodesk.fusionstreamdeck.sdPlugin`** - a
   Stream Deck plugin with one action, **Run Command**.
   It's plain JavaScript with zero npm dependencies: Stream Deck's built-in
   Node.js runtime (declared in `manifest.json` as `Nodejs.Version: "24"`)

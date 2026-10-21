@@ -1,5 +1,5 @@
 {
-    "name": "com.ryanfriedman.fusionstreamdeck",
+    "name": "com.autodesk.fusionstreamdeck",
     "private": true,
     "type": "module",
     "description": "Stream Deck plugin backend for Fusion Stream Deck. No npm dependencies on purpose: Stream Deck's built-in Node.js runtime (declared via manifest.json Nodejs.Version) provides global WebSocket and fetch, which is all this needs."

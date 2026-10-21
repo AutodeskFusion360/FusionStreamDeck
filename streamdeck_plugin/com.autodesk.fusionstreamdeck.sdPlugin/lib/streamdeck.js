@@ -1,5 +1,5 @@
 // ==============================================================================
-// Fusion Stream Deck: streamdeck_plugin/com.ryanfriedman.fusionstreamdeck.sdPlugin/lib/streamdeck.js
+// Fusion Stream Deck: streamdeck_plugin/com.autodesk.fusionstreamdeck.sdPlugin/lib/streamdeck.js
 // ==============================================================================
 // Copyright (c) 2026 Autodesk, Inc.
 // Licensed under the MIT License. See LICENSE in the project root.

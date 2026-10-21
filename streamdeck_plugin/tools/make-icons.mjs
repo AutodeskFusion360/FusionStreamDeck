@@ -19,7 +19,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
-const PLUGIN_DIR = path.join(ROOT, '..', 'com.ryanfriedman.fusionstreamdeck.sdPlugin');
+const PLUGIN_DIR = path.join(ROOT, '..', 'com.autodesk.fusionstreamdeck.sdPlugin');
 
 const CRC_TABLE = (() => {
   const table = new Uint32Array(256);

@@ -1,5 +1,5 @@
 // ==============================================================================
-// Fusion Stream Deck: streamdeck_plugin/com.ryanfriedman.fusionstreamdeck.sdPlugin/bin/plugin.js
+// Fusion Stream Deck: streamdeck_plugin/com.autodesk.fusionstreamdeck.sdPlugin/bin/plugin.js
 // ==============================================================================
 // Copyright (c) 2026 Autodesk, Inc.
 // Licensed under the MIT License. See LICENSE in the project root.
@@ -7,7 +7,7 @@
 import { StreamDeckConnection } from '../lib/streamdeck.js';
 import { runCommand, fetchIconDataUri, getDisabledIconDataUri, searchCommands } from '../lib/fusionClient.js';
 
-const RUN_COMMAND_UUID = 'com.ryanfriedman.fusionstreamdeck.runcommand';
+const RUN_COMMAND_UUID = 'com.autodesk.fusionstreamdeck.runcommand';
 const ICON_SIZE = 32;
 const DISABLED_RETRY_MS = 5000;
 
