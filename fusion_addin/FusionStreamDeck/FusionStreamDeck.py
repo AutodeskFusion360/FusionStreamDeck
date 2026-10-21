@@ -1,5 +1,9 @@
+# ==============================================================================
+# Fusion Stream Deck: fusion_addin/FusionStreamDeck/FusionStreamDeck.py
+# ==============================================================================
 # Copyright (c) 2026 Autodesk, Inc.
 # Licensed under the MIT License. See LICENSE in the project root.
+# ==============================================================================
 """Fusion 360 add-in entry point.
 
 Starts a localhost-only HTTP server that a companion Elgato Stream Deck

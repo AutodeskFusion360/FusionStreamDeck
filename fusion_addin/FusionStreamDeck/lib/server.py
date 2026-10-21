@@ -1,5 +1,9 @@
+# ==============================================================================
+# Fusion Stream Deck: fusion_addin/FusionStreamDeck/lib/server.py
+# ==============================================================================
 # Copyright (c) 2026 Autodesk, Inc.
 # Licensed under the MIT License. See LICENSE in the project root.
+# ==============================================================================
 """Local-only HTTP server the Stream Deck plugin talks to.
 
 Endpoints (all on 127.0.0.1, JSON unless noted):

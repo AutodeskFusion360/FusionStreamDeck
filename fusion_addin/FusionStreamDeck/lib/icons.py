@@ -1,5 +1,9 @@
+# ==============================================================================
+# Fusion Stream Deck: fusion_addin/FusionStreamDeck/lib/icons.py
+# ==============================================================================
 # Copyright (c) 2026 Autodesk, Inc.
 # Licensed under the MIT License. See LICENSE in the project root.
+# ==============================================================================
 """Picks the best on-disk icon file out of a Fusion command's resourceFolder.
 
 Fusion ships several themed/DPI variants per size, e.g.:

@@ -1,5 +1,9 @@
+# ==============================================================================
+# Fusion Stream Deck: fusion_addin/FusionStreamDeck/lib/dispatch.py
+# ==============================================================================
 # Copyright (c) 2026 Autodesk, Inc.
 # Licensed under the MIT License. See LICENSE in the project root.
+# ==============================================================================
 """Marshals calls from background HTTP-server threads onto Fusion's main thread.
 
 The Fusion API is not thread-safe: it may only be called from the thread that

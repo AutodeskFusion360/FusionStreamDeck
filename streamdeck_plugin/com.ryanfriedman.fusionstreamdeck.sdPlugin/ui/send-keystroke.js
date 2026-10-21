@@ -1,5 +1,9 @@
+// ==============================================================================
+// Fusion Stream Deck: streamdeck_plugin/com.ryanfriedman.fusionstreamdeck.sdPlugin/ui/send-keystroke.js
+// ==============================================================================
 // Copyright (c) 2026 Autodesk, Inc.
 // Licensed under the MIT License. See LICENSE in the project root.
+// ==============================================================================
 let websocket = null;
 let piUUID = null;
 let settings = {};

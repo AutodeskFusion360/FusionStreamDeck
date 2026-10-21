@@ -1,5 +1,9 @@
+// ==============================================================================
+// Fusion Stream Deck: streamdeck_plugin/com.ryanfriedman.fusionstreamdeck.sdPlugin/lib/keystroke.js
+// ==============================================================================
 // Copyright (c) 2026 Autodesk, Inc.
 // Licensed under the MIT License. See LICENSE in the project root.
+// ==============================================================================
 // Sends an OS-level keystroke to whatever application is frontmost. Doesn't
 // touch the Fusion add-in at all, so this works even if Fusion or the add-in
 // isn't running - it's a plain macro-pad button.

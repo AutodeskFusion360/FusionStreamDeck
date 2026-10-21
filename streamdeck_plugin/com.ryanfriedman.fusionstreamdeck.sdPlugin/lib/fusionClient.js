@@ -1,5 +1,9 @@
+// ==============================================================================
+// Fusion Stream Deck: streamdeck_plugin/com.ryanfriedman.fusionstreamdeck.sdPlugin/lib/fusionClient.js
+// ==============================================================================
 // Copyright (c) 2026 Autodesk, Inc.
 // Licensed under the MIT License. See LICENSE in the project root.
+// ==============================================================================
 // Talks to the Fusion add-in's local HTTP server (see fusion_addin/.../lib/server.py).
 import { getFusionEndpoint } from './discovery.js';
 

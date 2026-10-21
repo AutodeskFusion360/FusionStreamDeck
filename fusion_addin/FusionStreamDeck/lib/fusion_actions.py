@@ -1,5 +1,9 @@
+# ==============================================================================
+# Fusion Stream Deck: fusion_addin/FusionStreamDeck/lib/fusion_actions.py
+# ==============================================================================
 # Copyright (c) 2026 Autodesk, Inc.
 # Licensed under the MIT License. See LICENSE in the project root.
+# ==============================================================================
 """Fusion API calls made on the main thread via dispatch.run_on_main_thread().
 
 Nothing in this module touches adsk objects from a background thread.

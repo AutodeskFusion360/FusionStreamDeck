@@ -1,5 +1,9 @@
+// ==============================================================================
+// Fusion Stream Deck: streamdeck_plugin/com.ryanfriedman.fusionstreamdeck.sdPlugin/lib/discovery.js
+// ==============================================================================
 // Copyright (c) 2026 Autodesk, Inc.
 // Licensed under the MIT License. See LICENSE in the project root.
+// ==============================================================================
 // Mirrors fusion_addin/FusionStreamDeck/lib/discovery.py: finds the JSON file
 // the Fusion add-in publishes its local HTTP server's port to.
 import { readFile } from 'node:fs/promises';

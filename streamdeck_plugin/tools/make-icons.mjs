@@ -1,5 +1,9 @@
+// ==============================================================================
+// Fusion Stream Deck: streamdeck_plugin/tools/make-icons.mjs
+// ==============================================================================
 // Copyright (c) 2026 Autodesk, Inc.
 // Licensed under the MIT License. See LICENSE in the project root.
+// ==============================================================================
 // Generates the placeholder PNGs the Stream Deck manifest requires
 // (category/plugin icons, per-action icons, default key images).
 // These are deliberately plain flat-color glyphs, not Autodesk's Fusion 360

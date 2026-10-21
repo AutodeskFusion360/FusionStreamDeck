@@ -1,5 +1,9 @@
+// ==============================================================================
+// Fusion Stream Deck: streamdeck_plugin/com.ryanfriedman.fusionstreamdeck.sdPlugin/lib/streamdeck.js
+// ==============================================================================
 // Copyright (c) 2026 Autodesk, Inc.
 // Licensed under the MIT License. See LICENSE in the project root.
+// ==============================================================================
 // Minimal client for Stream Deck's plugin WebSocket protocol - no SDK
 // dependency, just the global WebSocket that Stream Deck's built-in Node.js
 // runtime provides (Node 22+). Protocol reference:
