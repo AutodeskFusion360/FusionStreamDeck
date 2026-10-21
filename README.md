@@ -1,8 +1,7 @@
 # Fusion Stream Deck
 
 Control Fusion 360 from an Elgato Stream Deck: run any Fusion command from a
-key (showing that command's *real* Fusion toolbar icon), or send a raw
-keyboard shortcut to the frontmost application.
+key, showing that command's *real* Fusion toolbar icon.
 
 There are two pieces, and you need to install both:
 
@@ -66,15 +65,7 @@ Deck's developer mode.
    - **macOS:** `~/Library/Application Support/com.elgato.StreamDeck/Plugins/`
 4. Start the Stream Deck app again.
 5. In the action list on the right, look for a **Fusion 360** category
-   containing **Run Command** and **Send Keystroke**.
-
-### macOS only: allow keystrokes
-
-**Send Keystroke** uses macOS System Events, which needs permission. The
-first time you use it, macOS may ask to let Stream Deck control "System
-Events" - click **OK**. Also go to **System Settings → Privacy & Security →
-Accessibility** and switch **Stream Deck** on. Without these, keystroke keys
-silently do nothing. (**Run Command** doesn't need this.)
+   containing **Run Command**.
 
 ## Step 3: Check that it works
 
@@ -102,13 +93,6 @@ come back automatically within about 5 seconds of Fusion and the add-in
 starting - no need to restart anything. Pressing a key while it's gray
 briefly shows a warning on the key and does nothing.
 
-**Send Keystroke**: type a combo like `ctrl+shift+d` into the settings panel.
-It sends the keystroke to whatever window is in front, and works even
-without Fusion or the add-in. Supported modifiers: `ctrl`, `alt`, `shift`,
-`win`/`cmd` (the Windows key can't be sent on Windows). Supported named
-keys: `enter`, `tab`, `esc`, `space`, `backspace`, `delete`, arrow keys,
-`home`, `end`, `pageup`, `pagedown`, `insert`, `f1`-`f12`, or any single
-character.
 
 ## Troubleshooting
 
@@ -143,10 +127,6 @@ character.
 - Switch Fusion to the workspace where that command lives, then search
   again.
 
-**Send Keystroke does nothing**
-- Make sure the window you want to receive the keystroke is in front.
-- On macOS, check the Accessibility and Automation permissions above.
-
 All network traffic stays on your computer (`127.0.0.1`), so no firewall
 changes are needed.
 
@@ -177,8 +157,8 @@ changes are needed.
 - The plugin's own icons (category and action list) are plain placeholders,
   not the Fusion 360 logo. Per-command key icons come from your installed
   Fusion.
-- macOS support, especially Send Keystroke, hasn't been tested yet
-  (developed on Windows). Feedback from Mac users is especially welcome.
+- macOS support hasn't been tested yet (developed on Windows). Feedback from
+  Mac users is especially welcome.
 
 ## For developers
 
@@ -203,7 +183,7 @@ Stream Deck app  <--WebSocket-->  streamdeck_plugin (Node)  <--HTTP-->  fusion_a
   isn't thread-safe and the HTTP server runs on a background thread.
 
 - **`streamdeck_plugin/com.ryanfriedman.fusionstreamdeck.sdPlugin`** - a
-  Stream Deck plugin with two actions, **Run Command** and **Send Keystroke**.
+  Stream Deck plugin with one action, **Run Command**.
   It's plain JavaScript with zero npm dependencies: Stream Deck's built-in
   Node.js runtime (declared in `manifest.json` as `Nodejs.Version: "24"`)
   has `WebSocket` and `fetch` as globals - enough to speak Stream Deck's

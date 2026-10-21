@@ -4,7 +4,7 @@
     "UUID": "com.ryanfriedman.fusionstreamdeck",
     "Version": "1.0.0.0",
     "Author": "Ryan Friedman",
-    "Description": "Run Fusion 360 commands and send keystrokes from an Elgato Stream Deck, with each key showing the command's real Fusion toolbar icon.",
+    "Description": "Run Fusion 360 commands from an Elgato Stream Deck, with each key showing the command's real Fusion toolbar icon.",
     "Category": "Fusion 360",
     "CategoryIcon": "imgs/plugin/category-icon",
     "Icon": "imgs/plugin/marketplace",
@@ -31,21 +31,6 @@
             "States": [
                 {
                     "Image": "imgs/actions/run-command/key",
-                    "TitleAlignment": "bottom",
-                    "ShowTitle": true
-                }
-            ]
-        },
-        {
-            "Name": "Send Keystroke",
-            "UUID": "com.ryanfriedman.fusionstreamdeck.keystroke",
-            "Tooltip": "Send a keyboard shortcut to the active application (works even if the Fusion add-in isn't running).",
-            "Icon": "imgs/actions/keystroke/icon",
-            "PropertyInspectorPath": "ui/send-keystroke.html",
-            "SupportedInMultiActions": true,
-            "States": [
-                {
-                    "Image": "imgs/actions/keystroke/key",
                     "TitleAlignment": "bottom",
                     "ShowTitle": true
                 }

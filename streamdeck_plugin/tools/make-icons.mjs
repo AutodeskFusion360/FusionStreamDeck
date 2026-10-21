@@ -87,7 +87,6 @@ function fillRect(rgba, size, x0, y0, x1, y1, color) {
   for (let y = y0; y < y1; y++) for (let x = x0; x < x1; x++) setPixel(rgba, size, x, y, color);
 }
 
-const TRANSPARENT = [0, 0, 0, 0];
 const INK = [235, 235, 235, 255]; // light gray glyph, reads well on dark Stream Deck keys
 const ACCENT = [255, 140, 32, 255]; // warm accent, distinct from Fusion's own blue
 
@@ -120,29 +119,6 @@ function glyphPlay(rgba, size) {
   }
 }
 
-function glyphKeyboard(rgba, size) {
-  const m = Math.round(size * 0.16);
-  const t = Math.max(2, Math.round(size * 0.06));
-  fillRect(rgba, size, m, m, size - m, size - m, TRANSPARENT);
-  // outer frame
-  fillRect(rgba, size, m, m, size - m, m + t, INK);
-  fillRect(rgba, size, size - m - t, m, size - m, size - m, INK);
-  fillRect(rgba, size, m, m, m + t, size - m, INK);
-  fillRect(rgba, size, size - m - t, m, size - m, size - m, INK);
-  // key dots
-  const keySize = Math.max(2, Math.round(size * 0.09));
-  const gap = Math.round(size * 0.16);
-  const startX = m + gap;
-  const startY = m + gap;
-  for (let row = 0; row < 2; row++) {
-    for (let col = 0; col < 3; col++) {
-      const x = startX + col * gap;
-      const y = startY + row * gap;
-      fillRect(rgba, size, x, y, x + keySize, y + keySize, ACCENT);
-    }
-  }
-}
-
 function writePng(relPath, size, draw, bg = [30, 30, 30, 255]) {
   const rgba = makeCanvas(size, bg);
   draw(rgba, size);
@@ -163,11 +139,5 @@ writePng('imgs/actions/run-command/icon.png', 20, glyphPlay);
 writePng('imgs/actions/run-command/icon@2x.png', 40, glyphPlay);
 writePng('imgs/actions/run-command/key.png', 72, glyphPlay);
 writePng('imgs/actions/run-command/key@2x.png', 144, glyphPlay);
-
-// Send Keystroke action icon + default key image
-writePng('imgs/actions/keystroke/icon.png', 20, glyphKeyboard);
-writePng('imgs/actions/keystroke/icon@2x.png', 40, glyphKeyboard);
-writePng('imgs/actions/keystroke/key.png', 72, glyphKeyboard);
-writePng('imgs/actions/keystroke/key@2x.png', 144, glyphKeyboard);
 
 console.log('done');

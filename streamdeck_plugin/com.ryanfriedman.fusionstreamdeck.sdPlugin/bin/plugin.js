@@ -6,10 +6,8 @@
 // ==============================================================================
 import { StreamDeckConnection } from '../lib/streamdeck.js';
 import { runCommand, fetchIconDataUri, getDisabledIconDataUri, searchCommands } from '../lib/fusionClient.js';
-import { sendKeystroke } from '../lib/keystroke.js';
 
 const RUN_COMMAND_UUID = 'com.ryanfriedman.fusionstreamdeck.runcommand';
-const KEYSTROKE_UUID = 'com.ryanfriedman.fusionstreamdeck.keystroke';
 const ICON_SIZE = 32;
 const DISABLED_RETRY_MS = 5000;
 
@@ -77,9 +75,6 @@ sd.on('keyDown', async (msg) => {
         if (action === RUN_COMMAND_UUID) {
             if (!settings.commandId) throw new Error('No command configured');
             await runCommand(settings.commandId);
-        } else if (action === KEYSTROKE_UUID) {
-            if (!settings.combo) throw new Error('No key combo configured');
-            await sendKeystroke(settings.combo);
         }
         sd.showOk(msg.context);
     } catch (err) {
